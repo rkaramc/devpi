@@ -1,0 +1,17 @@
+[project]
+name = "devpi-config"
+version = "0.1.2"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.8",
+    "devpi-client>=2.2.0",
+    "numpy>=2.2.1",
+]
+
+[[tool.uv.index]]
+name = "devpi-staging"
+url = "http://localhost:3141/packages/staging"
+publish-url = "http://localhost:3141/packages/staging/+simple/"
+default = true
