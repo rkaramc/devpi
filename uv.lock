@@ -2,9 +2,21 @@ version = 1
 requires-python = ">=3.12"
 
 [[package]]
+name = "attridict"
+version = "0.0.9"
+source = { registry = "http://localhost:3141/packages/staging" }
+dependencies = [
+    { name = "pyyaml" },
+]
+sdist = { url = "http://localhost:3141/root/pypi/+f/a0d/6b140a17998f3/attridict-0.0.9.tar.gz", hash = "sha256:a0d6b140a17998f32dd71268b3f20a7b74ae5c7d14d628de75cf68f83c61f4ee" }
+wheels = [
+    { url = "http://localhost:3141/root/pypi/+f/a64/98b2f4e669105/attridict-0.0.9-py3-none-any.whl", hash = "sha256:a6498b2f4e669105225b759feb2e47af8782fdbdb33610b50dd5d086d1875e49" },
+]
+
+[[package]]
 name = "build"
 version = "1.2.2.post1"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 dependencies = [
     { name = "colorama", marker = "os_name == 'nt'" },
     { name = "packaging" },
@@ -18,7 +30,7 @@ wheels = [
 [[package]]
 name = "certifi"
 version = "2024.12.14"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/b65/0d30f370c2b72/certifi-2024.12.14.tar.gz", hash = "sha256:b650d30f370c2b724812bee08008be0c4163b163ddaec3f2546c1caf65f191db" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/127/5f7a45be9464e/certifi-2024.12.14-py3-none-any.whl", hash = "sha256:1275f7a45be9464efc1173084eaa30f866fe2e47d389406136d332ed4967ec56" },
@@ -27,7 +39,7 @@ wheels = [
 [[package]]
 name = "charset-normalizer"
 version = "3.4.1"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/442/51f18cd68a75b/charset_normalizer-3.4.1.tar.gz", hash = "sha256:44251f18cd68a75b56585dd00dae26183e102cd5e0f9f1466e6df5da2ed64ea3" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/73d/94b58ec7fecbc/charset_normalizer-3.4.1-cp312-cp312-macosx_10_13_universal2.whl", hash = "sha256:73d94b58ec7fecbc7366247d3b0b10a21681004153238750bb67bd9012414545" },
@@ -62,7 +74,7 @@ wheels = [
 [[package]]
 name = "check-manifest"
 version = "0.50"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 dependencies = [
     { name = "build" },
     { name = "setuptools" },
@@ -75,7 +87,7 @@ wheels = [
 [[package]]
 name = "click"
 version = "8.1.8"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 dependencies = [
     { name = "colorama", marker = "sys_platform == 'win32'" },
 ]
@@ -87,7 +99,7 @@ wheels = [
 [[package]]
 name = "colorama"
 version = "0.4.6"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/086/95f5cb7ed6e05/colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/4f1/d9991f5acc0ca/colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6" },
@@ -96,7 +108,7 @@ wheels = [
 [[package]]
 name = "devpi-client"
 version = "7.2.0"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 dependencies = [
     { name = "build" },
     { name = "check-manifest" },
@@ -115,7 +127,7 @@ wheels = [
 [[package]]
 name = "devpi-common"
 version = "4.0.4"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 dependencies = [
     { name = "lazy" },
     { name = "packaging-legacy" },
@@ -128,9 +140,10 @@ wheels = [
 
 [[package]]
 name = "devpi-config"
-version = "0.1.0"
+version = "0.1.2"
 source = { virtual = "." }
 dependencies = [
+    { name = "attridict" },
     { name = "click" },
     { name = "devpi-client" },
     { name = "numpy" },
@@ -138,6 +151,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "attridict", specifier = ">=0.0.9" },
     { name = "click", specifier = ">=8.1.8" },
     { name = "devpi-client", specifier = ">=2.2.0" },
     { name = "numpy", specifier = ">=2.2.1" },
@@ -146,7 +160,7 @@ requires-dist = [
 [[package]]
 name = "idna"
 version = "3.10"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/12f/65c9b470abda6/idna-3.10.tar.gz", hash = "sha256:12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/946/d195a0d259cbb/idna-3.10-py3-none-any.whl", hash = "sha256:946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3" },
@@ -155,7 +169,7 @@ wheels = [
 [[package]]
 name = "iniconfig"
 version = "2.0.0"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/2d9/1e135bf72d31a/iniconfig-2.0.0.tar.gz", hash = "sha256:2d91e135bf72d31a410b17c16da610a82cb55f6b0477d1a902134b24a455b8b3" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/b6a/85871a79d2e3b/iniconfig-2.0.0-py3-none-any.whl", hash = "sha256:b6a85871a79d2e3b22d2d1b94ac2824226a63c6b741c88f7ae975f18b6778374" },
@@ -164,7 +178,7 @@ wheels = [
 [[package]]
 name = "lazy"
 version = "1.6"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/712/7324ec709e832/lazy-1.6.tar.gz", hash = "sha256:7127324ec709e8324f08cb4611c1abe01776bda53bb9ce68dc5dfa46ca0ed3e9" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/449/375c125c7acac/lazy-1.6-py2.py3-none-any.whl", hash = "sha256:449375c125c7acac6b7a93f71b8e7ccb06546c37b161613f92d2d3981f793244" },
@@ -173,7 +187,7 @@ wheels = [
 [[package]]
 name = "numpy"
 version = "2.2.1"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/456/81fd7128c8ad1/numpy-2.2.1.tar.gz", hash = "sha256:45681fd7128c8ad1c379f0ca0776a8b0c6583d2f69889ddac01559dfe4390918" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/694/f9e921a0c8f25/numpy-2.2.1-cp312-cp312-macosx_10_13_x86_64.whl", hash = "sha256:694f9e921a0c8f252980e85bce61ebbd07ed2b7d4fa72d0e4246f2f8aa6642ab" },
@@ -211,7 +225,7 @@ wheels = [
 [[package]]
 name = "packaging"
 version = "24.2"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/c22/8a6dc5e932d34/packaging-24.2.tar.gz", hash = "sha256:c228a6dc5e932d346bc5739379109d49e8853dd8223571c7c5b55260edc0b97f" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/09a/bb1bccd265c01/packaging-24.2-py3-none-any.whl", hash = "sha256:09abb1bccd265c01f4a3aa3f7a7db064b36514d2cba19a2f694fe6150451a759" },
@@ -220,7 +234,7 @@ wheels = [
 [[package]]
 name = "packaging-legacy"
 version = "23.0.post0"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 dependencies = [
     { name = "packaging" },
 ]
@@ -232,7 +246,7 @@ wheels = [
 [[package]]
 name = "pkginfo"
 version = "1.12.0"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/8ad/91a0445a03678/pkginfo-1.12.0.tar.gz", hash = "sha256:8ad91a0445a036782b9366ef8b8c2c50291f83a553478ba8580c73d3215700cf" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/dcd/589c9be4da897/pkginfo-1.12.0-py3-none-any.whl", hash = "sha256:dcd589c9be4da8973eceffa247733c144812759aa67eaf4bbf97016a02f39088" },
@@ -241,7 +255,7 @@ wheels = [
 [[package]]
 name = "platformdirs"
 version = "4.3.6"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/357/fb2acbc885b04/platformdirs-4.3.6.tar.gz", hash = "sha256:357fb2acbc885b0419afd3ce3ed34564c13c9b95c89360cd9563f73aa5e2b907" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/73e/575e1408ab810/platformdirs-4.3.6-py3-none-any.whl", hash = "sha256:73e575e1408ab8103900836b97580d5307456908a03e92031bab39e4554cc3fb" },
@@ -250,7 +264,7 @@ wheels = [
 [[package]]
 name = "pluggy"
 version = "1.5.0"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/2cf/fa88e94fdc978/pluggy-1.5.0.tar.gz", hash = "sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/44e/1ad92c8ca002d/pluggy-1.5.0-py3-none-any.whl", hash = "sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669" },
@@ -259,16 +273,31 @@ wheels = [
 [[package]]
 name = "pyproject-hooks"
 version = "1.2.0"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/1e8/59bd5c40fae94/pyproject_hooks-1.2.0.tar.gz", hash = "sha256:1e859bd5c40fae9448642dd871adf459e5e2084186e8d2c2a79a824c970da1f8" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/9e5/c6bfa8dcc3009/pyproject_hooks-1.2.0-py3-none-any.whl", hash = "sha256:9e5c6bfa8dcc30091c74b0cf803c81fdd29d94f01992a7707bc97babb1141913" },
 ]
 
 [[package]]
+name = "pyyaml"
+version = "6.0.1"
+source = { registry = "http://localhost:3141/packages/staging" }
+sdist = { url = "http://localhost:3141/root/pypi/+f/bfd/f460b1736c775/PyYAML-6.0.1.tar.gz", hash = "sha256:bfdf460b1736c775f2ba9f6a92bca30bc2095067b8a9d77876d1fad6cc3b4a43" }
+wheels = [
+    { url = "http://localhost:3141/root/pypi/+f/855/fb52b0dc35af1/PyYAML-6.0.1-cp312-cp312-macosx_10_9_x86_64.whl", hash = "sha256:855fb52b0dc35af121542a76b9a84f8d1cd886ea97c84703eaa6d88e37a2ad28" },
+    { url = "http://localhost:3141/root/pypi/+f/40d/f9b996c2b7313/PyYAML-6.0.1-cp312-cp312-macosx_11_0_arm64.whl", hash = "sha256:40df9b996c2b73138957fe23a16a4f0ba614f4c0efce1e9406a184b6d07fa3a9" },
+    { url = "http://localhost:3141/root/pypi/+f/a08/c6f0fe150303c/PyYAML-6.0.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl", hash = "sha256:a08c6f0fe150303c1c6b71ebcd7213c2858041a7e01975da3a99aed1e7a378ef" },
+    { url = "http://localhost:3141/root/pypi/+f/6c2/2bec3fbe2524c/PyYAML-6.0.1-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6c22bec3fbe2524cde73d7ada88f6566758a8f7227bfbf93a408a9d86bcc12a0" },
+    { url = "http://localhost:3141/root/pypi/+f/8d4/e9c88387b0f5c/PyYAML-6.0.1-cp312-cp312-musllinux_1_1_x86_64.whl", hash = "sha256:8d4e9c88387b0f5c7d5f281e55304de64cf7f9c0021a3525bd3b1c542da3b0e4" },
+    { url = "http://localhost:3141/root/pypi/+f/d48/3d2cdf104e7c9/PyYAML-6.0.1-cp312-cp312-win32.whl", hash = "sha256:d483d2cdf104e7c9fa60c544d92981f12ad66a457afae824d146093b8c294c54" },
+    { url = "http://localhost:3141/root/pypi/+f/0d3/304d8c0adc42b/PyYAML-6.0.1-cp312-cp312-win_amd64.whl", hash = "sha256:0d3304d8c0adc42be59c5f8a4d9e3d7379e6955ad754aa9d6ab7a398b59dd1df" },
+]
+
+[[package]]
 name = "requests"
 version = "2.32.3"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 dependencies = [
     { name = "certifi" },
     { name = "charset-normalizer" },
@@ -283,7 +312,7 @@ wheels = [
 [[package]]
 name = "setuptools"
 version = "75.8.0"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/c5a/fc8f407c626b8/setuptools-75.8.0.tar.gz", hash = "sha256:c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/e39/82f4446172392/setuptools-75.8.0-py3-none-any.whl", hash = "sha256:e3982f444617239225d675215d51f6ba05f845d4eec313da4418fdbb56fb27e3" },
@@ -292,7 +321,7 @@ wheels = [
 [[package]]
 name = "urllib3"
 version = "2.3.0"
-source = { registry = "http://localhost:3141/packages/stable" }
+source = { registry = "http://localhost:3141/packages/staging" }
 sdist = { url = "http://localhost:3141/root/pypi/+f/f8c/5449b3cf08616/urllib3-2.3.0.tar.gz", hash = "sha256:f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d" }
 wheels = [
     { url = "http://localhost:3141/root/pypi/+f/1ce/e9ad369867bfd/urllib3-2.3.0-py3-none-any.whl", hash = "sha256:1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df" },

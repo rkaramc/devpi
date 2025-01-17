@@ -9,8 +9,8 @@ Install `devpi` in `docker` following instructions at (Mphego, 2021)[^Mphego2021
 docker-compose --env-file ./.env -f docker-compose-dev.yaml up --build -d
 docker exec -ti devpi-devpi-1 /bin/bash -c "/data/create_pypi_index.sh"
 
-# create user packager
-devpi user -c packages email=packaging@company.com password=packager
+# create user packages
+devpi user -c packages email=packaging@company.com
 
 # login as user packages
 devpi login packages
@@ -22,16 +22,19 @@ devpi index -c packages/staging bases=packages/stable volatile=True
 
 Configure your project to use `devpi`:
 
-```
+```bash
 # activate devpi packages/staging index
 devpi use packages/staging
 
 # update pyproject.toml to use packages/staging
+#
 #  [[tool.uv.index]]
 #  name = "devpi-staging"
 #  url = "http://localhost:3141/packages/staging"
 #  publish-url = "http://localhost:3141/packages/staging/+simple/"
 #  default = true
+#
+# run ./show-index.py to verify these keys are set in pyproject.toml
 
 # make changes, update version, build package
 uv build
